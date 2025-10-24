@@ -1,0 +1,1335 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THI Agency - TikTok Marketing Specialist</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        :root {
+            --primary: #FF0050;
+            --secondary: #00F2EA;
+            --accent: #FFD300;
+            --dark: #121212;
+            --light: #FFFFFF;
+            --gray: #8A8AA0;
+            --gradient: linear-gradient(135deg, var(--primary), var(--secondary));
+            --gradient-light: linear-gradient(135deg, #FF6B9C, #4CD7F5);
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --shadow-hover: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+            border: none;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: var(--gradient);
+            color: white;
+            box-shadow: var(--shadow);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+
+        .section-title p {
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--light);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 800;
+            font-size: 1.8rem;
+        }
+
+        .logo i {
+            color: var(--primary);
+        }
+
+        .logo span {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 35px;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding-top: 180px;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #f8f9ff 0%, #ffffff 100%);
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-text h1 span {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-text p {
+            font-size: 1.2rem;
+            color: var(--gray);
+            margin-bottom: 40px;
+            max-width: 500px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+        }
+
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        /* Podium MotoGP Style */
+        .podium-moto-container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            gap: 0;
+            margin-top: 40px;
+            position: relative;
+            min-height: 350px;
+            padding: 0 20px;
+        }
+
+        .podium-step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            transition: transform 0.3s ease;
+            flex: 1;
+            max-width: 200px;
+        }
+
+        .podium-step:hover {
+            transform: translateY(-10px);
+        }
+
+        .step-platform {
+            width: 100%;
+            background: var(--light);
+            border-radius: 15px 15px 0 0;
+            padding: 25px 15px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            border: 3px solid;
+            z-index: 2;
+        }
+
+        .step-platform.first {
+            height: 220px;
+            background: linear-gradient(145deg, #FFD700, #FFEC8B);
+            border-color: #D4AF37;
+            margin-bottom: 10px;
+        }
+
+        .step-platform.second {
+            height: 180px;
+            background: linear-gradient(145deg, #c0c0c0, #e8e8e8);
+            border-color: #a0a0a0;
+            margin-bottom: 10px;
+        }
+
+        .step-platform.third {
+            height: 140px;
+            background: linear-gradient(145deg, #CD7F32, #E9B076);
+            border-color: #8C7853;
+            margin-bottom: 10px;
+        }
+
+        .step-number {
+            position: absolute;
+            top: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.3rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            border: 3px solid white;
+            z-index: 3;
+        }
+
+        .step-number.first {
+            background: linear-gradient(145deg, #FFD700, #D4AF37);
+            color: #333;
+        }
+
+        .step-number.second {
+            background: linear-gradient(145deg, #c0c0c0, #a0a0a0);
+            color: #333;
+        }
+
+        .step-number.third {
+            background: linear-gradient(145deg, #CD7F32, #8C7853);
+        }
+
+        .step-name {
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .step-stats {
+            font-size: 0.85rem;
+            color: #555;
+            margin-bottom: 5px;
+        }
+
+        .step-label {
+            margin-top: 15px;
+            font-weight: 600;
+            color: var(--dark);
+            text-align: center;
+            padding: 8px 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            border: 2px solid;
+        }
+
+        .step-label.first {
+            border-color: #D4AF37;
+        }
+
+        .step-label.second {
+            border-color: #a0a0a0;
+        }
+
+        .step-label.third {
+            border-color: #8C7853;
+        }
+
+        /* Podium Base */
+        .podium-base {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 30px;
+            background: linear-gradient(145deg, #2c3e50, #34495e);
+            border-radius: 10px 10px 0 0;
+            z-index: 1;
+            box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Achievement Section */
+        .achievements {
+            background-color: #f8f9ff;
+        }
+
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .achievement-card {
+            background: var(--light);
+            border-radius: 20px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s;
+        }
+
+        .achievement-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .achievement-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 20px;
+            background: var(--gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            font-size: 2rem;
+            color: white;
+        }
+
+        .achievement-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+        }
+
+        .achievement-card p {
+            color: var(--gray);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 1200px) {
+            .podium-moto-container {
+                gap: 10px;
+            }
+            
+            .podium-step {
+                max-width: 180px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .podium-moto-container {
+                gap: 5px;
+                min-height: 300px;
+            }
+            
+            .podium-step {
+                max-width: 160px;
+            }
+            
+            .step-platform.first {
+                height: 200px;
+            }
+            
+            .step-platform.second {
+                height: 160px;
+            }
+            
+            .step-platform.third {
+                height: 120px;
+            }
+            
+            .step-name {
+                font-size: 1rem;
+            }
+            
+            .step-stats {
+                font-size: 0.8rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--light);
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+
+            .hero-text h1 {
+                font-size: 2.8rem;
+            }
+
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+            
+            .podium-moto-container {
+                flex-direction: row;
+                align-items: flex-end;
+                gap: 0;
+                min-height: 280px;
+                padding: 0 10px;
+            }
+            
+            .podium-step {
+                max-width: 140px;
+            }
+            
+            .step-platform {
+                padding: 20px 10px;
+            }
+            
+            .step-platform.first {
+                height: 180px;
+            }
+            
+            .step-platform.second {
+                height: 150px;
+            }
+            
+            .step-platform.third {
+                height: 120px;
+            }
+            
+            .step-name {
+                font-size: 0.9rem;
+            }
+            
+            .step-stats {
+                font-size: 0.75rem;
+            }
+            
+            .step-label {
+                padding: 6px 15px;
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-text h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 250px;
+            }
+            
+            .podium-moto-container {
+                flex-direction: row;
+                gap: 0;
+                min-height: 250px;
+                padding: 0 5px;
+            }
+            
+            .podium-step {
+                max-width: 110px;
+            }
+            
+            .step-platform {
+                padding: 15px 8px;
+            }
+            
+            .step-platform.first {
+                height: 160px;
+            }
+            
+            .step-platform.second {
+                height: 130px;
+            }
+            
+            .step-platform.third {
+                height: 100px;
+            }
+            
+            .step-number {
+                width: 40px;
+                height: 40px;
+                font-size: 1.1rem;
+                top: -20px;
+            }
+            
+            .step-name {
+                font-size: 0.8rem;
+                margin-bottom: 5px;
+            }
+            
+            .step-stats {
+                font-size: 0.7rem;
+                margin-bottom: 3px;
+            }
+            
+            .step-label {
+                padding: 5px 12px;
+                font-size: 0.8rem;
+                margin-top: 10px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .podium-step {
+                max-width: 100px;
+            }
+            
+            .step-platform {
+                padding: 12px 5px;
+            }
+            
+            .step-platform.first {
+                height: 140px;
+            }
+            
+            .step-platform.second {
+                height: 120px;
+            }
+            
+            .step-platform.third {
+                height: 100px;
+            }
+            
+            .step-name {
+                font-size: 0.75rem;
+            }
+            
+            .step-stats {
+                font-size: 0.65rem;
+            }
+        }
+
+        /* Team Section */
+        .team {
+            background-color: var(--light);
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .team-card {
+            background: var(--light);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s;
+        }
+
+        .team-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .team-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            background: var(--gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: white;
+        }
+
+        .team-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .team-role {
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .team-card p {
+            color: var(--gray);
+            margin-bottom: 20px;
+        }
+
+        .team-social {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .team-social a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+
+        .team-social a:hover {
+            background: var(--gradient);
+            color: white;
+        }
+
+        /* Services Section */
+        .services {
+            background-color: #f8f9ff;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--light);
+            border-radius: 20px;
+            padding: 40px 30px;
+            transition: all 0.4s ease;
+            box-shadow: var(--shadow);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 20px;
+            background: var(--gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            font-size: 2rem;
+            color: white;
+            box-shadow: 0 10px 20px rgba(255, 45, 85, 0.2);
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .service-card p {
+            color: var(--gray);
+            margin-bottom: 20px;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            background-color: var(--light);
+        }
+
+        .testimonial-slider {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testimonial-track {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .testimonial-slide {
+            min-width: 100%;
+            padding: 0 20px;
+        }
+
+        .testimonial-card {
+            background: var(--light);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            left: 30px;
+            font-size: 5rem;
+            color: var(--primary);
+            opacity: 0.2;
+            font-family: Georgia, serif;
+        }
+
+        .client-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            background: var(--gradient);
+            border: 4px solid var(--light);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 25px;
+            color: var(--dark);
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .client-name {
+            font-weight: 600;
+            margin-bottom: 5px;
+            font-size: 1.2rem;
+        }
+
+        .client-role {
+            color: var(--primary);
+            font-size: 0.9rem;
+        }
+
+        .slider-nav {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 30px;
+        }
+
+        .slider-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .slider-dot.active {
+            background: var(--primary);
+            transform: scale(1.2);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: var(--light);
+            padding: 70px 0 30px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-column {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .footer-column h3 {
+            margin-bottom: 25px;
+            font-size: 1.3rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--gradient);
+            border-radius: 3px;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: var(--gray);
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-links a i {
+            font-size: 0.8rem;
+            color: var(--primary);
+        }
+
+        .footer-links a:hover {
+            color: var(--light);
+            transform: translateX(5px);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .social-link {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            font-size: 1.2rem;
+        }
+
+        .social-link:hover {
+            background: var(--gradient);
+            transform: translateY(-5px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <i class="fab fa-tiktok"></i>
+                <span>THI Agency</span>
+            </div>
+            <nav class="nav-links">
+                <a href="#home">Beranda</a>
+                <a href="#achievements">Pencapaian</a>
+                <a href="#team">Tim Kami</a>
+                <a href="#services">Layanan</a>
+                <a href="#testimonials">Testimoni</a>
+            </nav>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h1>Agency TikTok <span>Tallent Host Iwan</span> di Indonesia</h1>
+                <p>THI Agency telah diakui sebagai salah satu agency TikTok terbaik dengan pencapaian luar biasa dalam membantu brand dan creator berkembang di platform TikTok.</p>
+                <div class="hero-buttons">
+                    <a href="#registration" class="btn btn-primary">Daftar Sekarang</a>
+                    <a href="#team" class="btn btn-secondary">Kenali Tim Kami</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="podium-moto-container">
+                    <div class="podium-step">
+                        <div class="step-platform second">
+                            <div class="step-number second">2</div>
+                            <div class="step-name">ViralMax Studios</div>
+                            <div class="step-stats">89% Success Rate</div>
+                            <div class="step-stats">180+ Brands</div>
+                        </div>
+                        <div class="step-label second">Runner Up</div>
+                    </div>
+                    
+                    <div class="podium-step">
+                        <div class="step-platform first">
+                            <div class="step-number first">1</div>
+                            <div class="step-name">CreativeHub Agency</div>
+                            <div class="step-stats">95% Success Rate</div>
+                            <div class="step-stats">250+ Brands</div>
+                        </div>
+                        <div class="step-label first">Juara 1</div>
+                    </div>
+                    
+                    <div class="podium-step">
+                        <div class="step-platform third">
+                            <div class="step-number third">3</div>
+                            <div class="step-name">THI Agency</div>
+                            <div class="step-stats">87% Success Rate</div>
+                            <div class="step-stats">150+ Brands</div>
+                        </div>
+                        <div class="step-label third">Juara 3</div>
+                    </div>
+                    
+                    <div class="podium-base"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements" class="achievements">
+        <div class="container">
+            <div class="section-title">
+                <h2>Pencapaian Kami</h2>
+                <p>Bukti kesuksesan dan pengakuan yang telah kami raih</p>
+            </div>
+            <div class="achievements-grid">
+                <div class="achievement-card">
+                    <div class="achievement-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <div class="achievement-number">#3</div>
+                    <p>Peringkat Agency TikTok Terbaik</p>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="achievement-number">150+</div>
+                    <p>Brand Telah Dipercaya</p>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="achievement-number">87%</div>
+                    <p>Rate Kesuksesan Campaign</p>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <div class="achievement-number">5000+</div>
+                    <p>Konten Viral Dihasilkan</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="team">
+        <div class="container">
+            <div class="section-title">
+                <h2>Tim Kami</h2>
+                <p>Para ahli di balik kesuksesan THI Agency</p>
+            </div>
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3>Sarah Wijaya</h3>
+                    <div class="team-role">CEO & Founder</div>
+                    <p>Pakar TikTok marketing dengan pengalaman 5+ tahun di industri digital</p>
+                    <div class="team-social">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="team-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3>Budi Santoso</h3>
+                    <div class="team-role">Head of Strategy</div>
+                    <p>Spesialis algoritma TikTok dan data analytics untuk optimasi campaign</p>
+                    <div class="team-social">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="team-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3>Dewi Lestari</h3>
+                    <div class="team-role">Creative Director</div>
+                    <p>Ahli konten kreatif dengan kemampuan storytelling yang luar biasa</p>
+                    <div class="team-social">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="team-card">
+                    <div class="team-avatar">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <h3>Rizki Pratama</h3>
+                    <div class="team-role">Influencer Manager</div>
+                    <p>Menghubungkan brand dengan influencer yang tepat untuk hasil maksimal</p>
+                    <div class="team-social">
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Layanan Kami</h2>
+                <p>Solusi lengkap untuk kebutuhan TikTok marketing Anda</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3>Konten Kreatif</h3>
+                    <p>Produksi konten TikTok yang engaging dan sesuai dengan tren terkini untuk meningkatkan brand awareness</p>
+                    <a href="#" class="btn btn-primary">Selengkapnya</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Strategi Marketing</h3>
+                    <p>Perencanaan kampanye TikTok yang terukur dengan target dan KPI yang jelas</p>
+                    <a href="#" class="btn btn-primary">Selengkapnya</a>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Kolaborasi Influencer</h3>
+                    <p>Menghubungkan brand dengan influencer yang relevan untuk menjangkau audiens target</p>
+                    <a href="#" class="btn btn-primary">Selengkapnya</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Testimoni Klien</h2>
+                <p>Apa kata klien yang telah bekerja sama dengan kami</p>
+            </div>
+            <div class="testimonial-slider">
+                <div class="testimonial-track">
+                    <div class="testimonial-slide">
+                        <div class="testimonial-card">
+                            <div class="client-avatar"></div>
+                            <p class="testimonial-text">"THI Agency membantu brand kami menjadi viral di TikTok. Engagement meningkat 300% dan penjualan langsung terdongkrak! Tim mereka sangat profesional dan kreatif."</p>
+                            <h4 class="client-name">Sarah Wijaya</h4>
+                            <p class="client-role">Pemilik, FashionID</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-slide">
+                        <div class="testimonial-card">
+                            <div class="client-avatar"></div>
+                            <p class="testimonial-text">"Strategi konten mereka sangat kreatif dan sesuai dengan target audiens kami. Hasilnya melebihi ekspektasi! Dalam 2 bulan, followers bertambah 100K."</p>
+                            <h4 class="client-name">Budi Santoso</h4>
+                            <p class="client-role">Marketing Manager, FoodCorp</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-slide">
+                        <div class="testimonial-card">
+                            <div class="client-avatar"></div>
+                            <p class="testimonial-text">"Kolaborasi dengan influencer yang mereka atur sangat smooth dan memberikan hasil yang maksimal untuk brand kami. ROI yang didapat sangat memuaskan."</p>
+                            <h4 class="client-name">Dewi Lestari</h4>
+                            <p class="client-role">CEO, BeautyHub</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider-nav">
+                    <div class="slider-dot active"></div>
+                    <div class="slider-dot"></div>
+                    <div class="slider-dot"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <div class="logo">
+                        <i class="fab fa-tiktok"></i>
+                        <span>THI Agency</span>
+                    </div>
+                    <p>Agency TikTok peringkat 3 terbaik di Indonesia dengan track record yang terbukti membantu brand berkembang di platform TikTok.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-tiktok"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Layanan</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Konten Kreatif</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Strategi Marketing</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Kolaborasi Influencer</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Analisis & Reporting</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Perusahaan</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Tentang Kami</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Pencapaian</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Tim Kami</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Karir</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Kontak</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> WhatsApp</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Email</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> TikTok</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Instagram</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 THI Agency. All rights reserved. | Agency TikTok Peringkat 3 Terbaik</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        document.querySelector('.mobile-menu').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+
+        // Testimonial Slider
+        const track = document.querySelector('.testimonial-track');
+        const slides = document.querySelectorAll('.testimonial-slide');
+        const dots = document.querySelectorAll('.slider-dot');
+        let currentSlide = 0;
+
+        function goToSlide(slideIndex) {
+            track.style.transform = `translateX(-${slideIndex * 100}%)`;
+            
+            // Update active dot
+            dots.forEach(dot => dot.classList.remove('active'));
+            dots[slideIndex].classList.add('active');
+            
+            currentSlide = slideIndex;
+        }
+
+        // Add click events to dots
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                goToSlide(index);
+            });
+        });
+
+        // Auto slide every 5 seconds
+        setInterval(() => {
+            let nextSlide = (currentSlide + 1) % slides.length;
+            goToSlide(nextSlide);
+        }, 5000);
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    document.querySelector('.nav-links').classList.remove('active');
+                }
+            });
+        });
+
+        // Add scroll effect to header
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.05)';
+            }
+        });
+    </script>
+</body>
+</html>
