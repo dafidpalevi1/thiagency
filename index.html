@@ -144,10 +144,6 @@
         .logo-img {
             width: 168px;
             height: auto;
-            /* HAPUS properti yang menyebabkan background putih */
-            /* border-radius: 10px; */
-            /* background: var(--light); */
-            /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); */
         }
 
         .nav-links {
@@ -240,9 +236,6 @@
         .hero-main-image {
             max-width: 100%;
             height: auto;
-            /* HAPUS properti yang menyebabkan background putih */
-            /* border-radius: 20px; */
-            /* box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1); */
             transition: transform 0.3s ease;
         }
 
@@ -440,7 +433,7 @@
             margin-bottom: 20px;
         }
 
-        /* Testimonials Section */
+        /* Testimonials Section - UPDATED */
         .testimonials {
             background-color: var(--light);
         }
@@ -483,11 +476,11 @@
         }
 
         .client-avatar {
-            width: 80px;
-            height: 80px;
+            width: 100px;
+            height: 100px;
             border-radius: 50%;
             margin: 0 auto 20px;
-            background: var(--gradient);
+            object-fit: cover;
             border: 4px solid var(--light);
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
@@ -634,9 +627,6 @@
         .footer-logo-img {
             width: 140px;
             height: auto;
-            /* HAPUS properti yang menyebabkan background putih */
-            /* border-radius: 8px; */
-            /* background: var(--light); */
         }
 
         .footer-links {
@@ -799,6 +789,12 @@
                 height: 50px;
                 font-size: 1.3rem;
             }
+
+            /* Testimonial responsive */
+            .client-avatar {
+                width: 90px;
+                height: 90px;
+            }
         }
 
         @media (max-width: 576px) {
@@ -885,6 +881,16 @@
             .faq-item.active .faq-answer {
                 padding: 0 25px 20px 25px;
             }
+
+            /* Testimonial responsive */
+            .client-avatar {
+                width: 80px;
+                height: 80px;
+            }
+
+            .testimonial-card {
+                padding: 30px 20px;
+            }
         }
 
         @media (max-width: 400px) {
@@ -931,6 +937,12 @@
                 height: 40px;
                 font-size: 1.1rem;
             }
+
+            /* Testimonial responsive */
+            .client-avatar {
+                width: 70px;
+                height: 70px;
+            }
         }
     </style>
 </head>
@@ -939,7 +951,7 @@
     <header>
         <div class="container header-container">
             <div class="logo">
-                <a href="https://thiagency.id" class="logo-link" target="_blank">
+                <a href="index.html" class="logo-link">
                     <img src="img/logothi.png" alt="THI Agency Logo" class="logo-img">
                 </a>
             </div>
@@ -987,7 +999,7 @@
                     <div class="achievement-icon">
                         <i class="fas fa-trophy"></i>
                     </div>
-                    <div class="achievement-number">#1</div>
+                    <div class="achievement-number">#3</div>
                     <p>Peringkat Agency TikTok Terbaik</p>
                 </div>
                 <div class="achievement-card">
@@ -1107,7 +1119,7 @@
         </div>
     </section>
 
-    <!-- Testimonials Section -->
+    <!-- Testimonials Section - UPDATED -->
     <section id="testimonials" class="testimonials">
         <div class="container">
             <div class="section-title">
@@ -1118,7 +1130,7 @@
                 <div class="testimonial-track">
                     <div class="testimonial-slide">
                         <div class="testimonial-card">
-                            <div class="client-avatar"></div>
+                            <img src="img/iwan.png" alt="Sarah Wijaya" class="client-avatar">
                             <p class="testimonial-text">"THI Agency membantu brand kami menjadi viral di TikTok. Engagement meningkat 300% dan penjualan langsung terdongkrak! Tim mereka sangat profesional dan kreatif."</p>
                             <h4 class="client-name">Sarah Wijaya</h4>
                             <p class="client-role">Pemilik, FashionID</p>
@@ -1126,7 +1138,7 @@
                     </div>
                     <div class="testimonial-slide">
                         <div class="testimonial-card">
-                            <div class="client-avatar"></div>
+                            <img src="img/iwan.png" alt="Budi Santoso" class="client-avatar">
                             <p class="testimonial-text">"Strategi konten mereka sangat kreatif dan sesuai dengan target audiens kami. Hasilnya melebihi ekspektasi! Dalam 2 bulan, followers bertambah 100K."</p>
                             <h4 class="client-name">Budi Santoso</h4>
                             <p class="client-role">Marketing Manager, FoodCorp</p>
@@ -1134,7 +1146,7 @@
                     </div>
                     <div class="testimonial-slide">
                         <div class="testimonial-card">
-                            <div class="client-avatar"></div>
+                            <img src="img/iwan.png" alt="Dewi Lestari" class="client-avatar">
                             <p class="testimonial-text">"Kolaborasi dengan influencer yang mereka atur sangat smooth dan memberikan hasil yang maksimal untuk brand kami. ROI yang didapat sangat memuaskan."</p>
                             <h4 class="client-name">Dewi Lestari</h4>
                             <p class="client-role">CEO, BeautyHub</p>
@@ -1212,7 +1224,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
-                    <a href="https://thiagency.id" class="footer-logo" target="_blank">
+                    <a href="index.html" class="footer-logo">
                         <img src="img/logothi.png" alt="THI Agency Logo" class="footer-logo-img">
                     </a>
                     <p>Agency TikTok peringkat terbaik di Indonesia dengan track record yang terbukti membantu kreator berkembang di platform TikTok.</p>
