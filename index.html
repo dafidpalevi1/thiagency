@@ -418,224 +418,6 @@
             color: var(--gray);
         }
 
-        /* Responsive Styles */
-        @media (max-width: 1200px) {
-            .podium-moto-container {
-                gap: 10px;
-            }
-            
-            .podium-step {
-                max-width: 180px;
-            }
-        }
-
-        @media (max-width: 992px) {
-            .hero-content {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .hero-buttons {
-                justify-content: center;
-            }
-
-            .podium-moto-container {
-                gap: 5px;
-                min-height: 300px;
-            }
-            
-            .podium-step {
-                max-width: 160px;
-            }
-            
-            .step-platform.first {
-                height: 200px;
-            }
-            
-            .step-platform.second {
-                height: 160px;
-            }
-            
-            .step-platform.third {
-                height: 120px;
-            }
-            
-            .step-name {
-                font-size: 1rem;
-            }
-            
-            .step-stats {
-                font-size: 0.8rem;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background: var(--light);
-                flex-direction: column;
-                padding: 20px;
-                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
-            }
-
-            .nav-links.active {
-                display: flex;
-            }
-
-            .mobile-menu {
-                display: block;
-            }
-
-            .hero-text h1 {
-                font-size: 2.8rem;
-            }
-
-            .section-title h2 {
-                font-size: 2.2rem;
-            }
-            
-            .podium-moto-container {
-                flex-direction: row;
-                align-items: flex-end;
-                gap: 0;
-                min-height: 280px;
-                padding: 0 10px;
-            }
-            
-            .podium-step {
-                max-width: 140px;
-            }
-            
-            .step-platform {
-                padding: 20px 10px;
-            }
-            
-            .step-platform.first {
-                height: 180px;
-            }
-            
-            .step-platform.second {
-                height: 150px;
-            }
-            
-            .step-platform.third {
-                height: 120px;
-            }
-            
-            .step-name {
-                font-size: 0.9rem;
-            }
-            
-            .step-stats {
-                font-size: 0.75rem;
-            }
-            
-            .step-label {
-                padding: 6px 15px;
-                font-size: 0.9rem;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .hero-text h1 {
-                font-size: 2.2rem;
-            }
-
-            .hero-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .btn {
-                width: 100%;
-                max-width: 250px;
-            }
-            
-            .podium-moto-container {
-                flex-direction: row;
-                gap: 0;
-                min-height: 250px;
-                padding: 0 5px;
-            }
-            
-            .podium-step {
-                max-width: 110px;
-            }
-            
-            .step-platform {
-                padding: 15px 8px;
-            }
-            
-            .step-platform.first {
-                height: 160px;
-            }
-            
-            .step-platform.second {
-                height: 130px;
-            }
-            
-            .step-platform.third {
-                height: 100px;
-            }
-            
-            .step-number {
-                width: 40px;
-                height: 40px;
-                font-size: 1.1rem;
-                top: -20px;
-            }
-            
-            .step-name {
-                font-size: 0.8rem;
-                margin-bottom: 5px;
-            }
-            
-            .step-stats {
-                font-size: 0.7rem;
-                margin-bottom: 3px;
-            }
-            
-            .step-label {
-                padding: 5px 12px;
-                font-size: 0.8rem;
-                margin-top: 10px;
-            }
-        }
-
-        @media (max-width: 400px) {
-            .podium-step {
-                max-width: 100px;
-            }
-            
-            .step-platform {
-                padding: 12px 5px;
-            }
-            
-            .step-platform.first {
-                height: 140px;
-            }
-            
-            .step-platform.second {
-                height: 120px;
-            }
-            
-            .step-platform.third {
-                height: 100px;
-            }
-            
-            .step-name {
-                font-size: 0.75rem;
-            }
-            
-            .step-stats {
-                font-size: 0.65rem;
-            }
-        }
-
         /* Team Section */
         .team {
             background-color: var(--light);
@@ -660,17 +442,15 @@
             transform: translateY(-10px);
         }
 
-        .team-avatar {
-            width: 120px;
-            height: 120px;
+        .team-photo {
+            width: 150px;
+            height: 150px;
             border-radius: 50%;
             margin: 0 auto 20px;
-            background: var(--gradient);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2.5rem;
-            color: white;
+            object-fit: cover;
+            border: 4px solid var(--light);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
         }
 
         .team-card h3 {
@@ -959,6 +739,224 @@
             color: var(--gray);
             font-size: 0.9rem;
         }
+
+        /* Responsive Styles */
+        @media (max-width: 1200px) {
+            .podium-moto-container {
+                gap: 10px;
+            }
+            
+            .podium-step {
+                max-width: 180px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .podium-moto-container {
+                gap: 5px;
+                min-height: 300px;
+            }
+            
+            .podium-step {
+                max-width: 160px;
+            }
+            
+            .step-platform.first {
+                height: 200px;
+            }
+            
+            .step-platform.second {
+                height: 160px;
+            }
+            
+            .step-platform.third {
+                height: 120px;
+            }
+            
+            .step-name {
+                font-size: 1rem;
+            }
+            
+            .step-stats {
+                font-size: 0.8rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: var(--light);
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+
+            .hero-text h1 {
+                font-size: 2.8rem;
+            }
+
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+            
+            .podium-moto-container {
+                flex-direction: row;
+                align-items: flex-end;
+                gap: 0;
+                min-height: 280px;
+                padding: 0 10px;
+            }
+            
+            .podium-step {
+                max-width: 140px;
+            }
+            
+            .step-platform {
+                padding: 20px 10px;
+            }
+            
+            .step-platform.first {
+                height: 180px;
+            }
+            
+            .step-platform.second {
+                height: 150px;
+            }
+            
+            .step-platform.third {
+                height: 120px;
+            }
+            
+            .step-name {
+                font-size: 0.9rem;
+            }
+            
+            .step-stats {
+                font-size: 0.75rem;
+            }
+            
+            .step-label {
+                padding: 6px 15px;
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-text h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 250px;
+            }
+            
+            .podium-moto-container {
+                flex-direction: row;
+                gap: 0;
+                min-height: 250px;
+                padding: 0 5px;
+            }
+            
+            .podium-step {
+                max-width: 110px;
+            }
+            
+            .step-platform {
+                padding: 15px 8px;
+            }
+            
+            .step-platform.first {
+                height: 160px;
+            }
+            
+            .step-platform.second {
+                height: 130px;
+            }
+            
+            .step-platform.third {
+                height: 100px;
+            }
+            
+            .step-number {
+                width: 40px;
+                height: 40px;
+                font-size: 1.1rem;
+                top: -20px;
+            }
+            
+            .step-name {
+                font-size: 0.8rem;
+                margin-bottom: 5px;
+            }
+            
+            .step-stats {
+                font-size: 0.7rem;
+                margin-bottom: 3px;
+            }
+            
+            .step-label {
+                padding: 5px 12px;
+                font-size: 0.8rem;
+                margin-top: 10px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .podium-step {
+                max-width: 100px;
+            }
+            
+            .step-platform {
+                padding: 12px 5px;
+            }
+            
+            .step-platform.first {
+                height: 140px;
+            }
+            
+            .step-platform.second {
+                height: 120px;
+            }
+            
+            .step-platform.third {
+                height: 100px;
+            }
+            
+            .step-name {
+                font-size: 0.75rem;
+            }
+            
+            .step-stats {
+                font-size: 0.65rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1080,23 +1078,21 @@
             </div>
             <div class="team-grid">
                 <div class="team-card">
-                    <div class="team-avatar">
-                        <i class="fas fa-user"></i>
-                    </div>
+                    <img src="img/iwan.png" alt="Iwan THI - Founder" class="team-photo">
                     <h3>Iwan THI</h3>
-                    <div class="team-role">Founder</div>
-                    <p>Pakar TikTok marketing dengan pengalaman 5+ tahun di industri digital</p>
+                    <div class="team-role">Founder & CEO</div>
+                    <p>Pakar TikTok marketing dengan pengalaman 5+ tahun di industri digital. Spesialis dalam strategi konten viral dan growth hacking di platform TikTok.</p>
                     <div class="team-social">
                         <a href="#"><i class="fab fa-tiktok"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
                     </div>
                 </div>
                 <div class="team-card">
-                    <div class="team-avatar">
-                        <i class="fas fa-user"></i>
-                    </div>
+                    <img src="img/iwan.png" alt="Iwan THI - Founder" class="team-photo">
                     <h3>Budi Santoso</h3>
                     <div class="team-role">Head of Strategy</div>
-                    <p>Spesialis algoritma TikTok dan data analytics untuk optimasi campaign</p>
+                    <p>Spesialis algoritma TikTok dan data analytics untuk optimasi campaign. Berpengalaman dalam meningkatkan engagement rate hingga 300%.</p>
                     <div class="team-social">
                         <a href="#"><i class="fab fa-linkedin"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
@@ -1104,12 +1100,10 @@
                     </div>
                 </div>
                 <div class="team-card">
-                    <div class="team-avatar">
-                        <i class="fas fa-user"></i>
-                    </div>
+                    <img src="img/iwan.png" alt="Iwan THI - Founder" class="team-photo">
                     <h3>Dewi Lestari</h3>
                     <div class="team-role">Creative Director</div>
-                    <p>Ahli konten kreatif dengan kemampuan storytelling yang luar biasa</p>
+                    <p>Ahli konten kreatif dengan kemampuan storytelling yang luar biasa. Telah menghasilkan 500+ konten viral dengan total views 50M+.</p>
                     <div class="team-social">
                         <a href="#"><i class="fab fa-linkedin"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
@@ -1117,12 +1111,10 @@
                     </div>
                 </div>
                 <div class="team-card">
-                    <div class="team-avatar">
-                        <i class="fas fa-user"></i>
-                    </div>
+                    <img src="img/iwan.png" alt="Iwan THI - Founder" class="team-photo">
                     <h3>Rizki Pratama</h3>
                     <div class="team-role">Influencer Manager</div>
-                    <p>Menghubungkan brand dengan influencer yang tepat untuk hasil maksimal</p>
+                    <p>Menghubungkan brand dengan influencer yang tepat untuk hasil maksimal. Telah mengelola 200+ kolaborasi dengan success rate 95%.</p>
                     <div class="team-social">
                         <a href="#"><i class="fab fa-linkedin"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
