@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>THI Agency - Agency Tiktok Indonesia</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+    <link rel="icon" type="image/png" href="img/favicon.png">
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+    <!-- End Favicon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
@@ -1155,9 +1160,7 @@
 
                 </div>
                 <div class="slider-nav">
-                    <div class="slider-dot active"></div>
-                    <div class="slider-dot"></div>
-                    <div class="slider-dot"></div>
+                    <!-- Dots akan di-generate otomatis oleh JavaScript -->
                 </div>
             </div>
         </div>
@@ -1284,34 +1287,51 @@
             document.querySelector('.nav-links').classList.toggle('active');
         });
 
-        // Testimonial Slider
+        // Testimonial Slider - FIXED
         const track = document.querySelector('.testimonial-track');
         const slides = document.querySelectorAll('.testimonial-slide');
-        const dots = document.querySelectorAll('.slider-dot');
+        const sliderNav = document.querySelector('.slider-nav');
         let currentSlide = 0;
+
+        // Generate dots berdasarkan jumlah slide
+        function generateDots() {
+            sliderNav.innerHTML = ''; // Clear existing dots
+            slides.forEach((_, index) => {
+                const dot = document.createElement('div');
+                dot.className = 'slider-dot';
+                if (index === 0) dot.classList.add('active');
+                dot.addEventListener('click', () => goToSlide(index));
+                sliderNav.appendChild(dot);
+            });
+        }
 
         function goToSlide(slideIndex) {
             track.style.transform = `translateX(-${slideIndex * 100}%)`;
             
             // Update active dot
+            const dots = document.querySelectorAll('.slider-dot');
             dots.forEach(dot => dot.classList.remove('active'));
             dots[slideIndex].classList.add('active');
             
             currentSlide = slideIndex;
         }
 
-        // Add click events to dots
-        dots.forEach((dot, index) => {
-            dot.addEventListener('click', () => {
-                goToSlide(index);
-            });
-        });
-
         // Auto slide every 5 seconds
-        setInterval(() => {
+        function autoSlide() {
             let nextSlide = (currentSlide + 1) % slides.length;
             goToSlide(nextSlide);
-        }, 5000);
+        }
+
+        // Initialize slider
+        generateDots();
+        let slideInterval = setInterval(autoSlide, 5000);
+
+        // Pause auto slide on hover
+        const slider = document.querySelector('.testimonial-slider');
+        slider.addEventListener('mouseenter', () => clearInterval(slideInterval));
+        slider.addEventListener('mouseleave', () => {
+            slideInterval = setInterval(autoSlide, 5000);
+        });
 
         // FAQ Accordion
         document.querySelectorAll('.faq-question').forEach(question => {
